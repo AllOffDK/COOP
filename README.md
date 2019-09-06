@@ -22,9 +22,11 @@
 
 8. Start the prototype program (this could take a minute)
 
-9. Livefeed from the device should be displayed in the prototype program
+9. Livefeed from the device should be displayed in the prototype program :+1:
 
 If it is not, check the network connection is the same else if the livefeed is displayed - Prototype is ready to go
 
 ## The prototype
+
+
 
