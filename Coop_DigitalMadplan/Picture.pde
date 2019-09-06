@@ -1,5 +1,4 @@
-void takePictureMenu()
-{
+void takePictureMenu(){
   camOn = true;
   background(246,251,249);
   if (cam.available() == true && camOn == true) {
@@ -23,7 +22,6 @@ void takePictureMenu()
   text("Take Picture", width/2, height-70);
 }
 
-void takePicture()
-{
+void takePicture(){
   cam.save("data/MadPlan.png");
 }

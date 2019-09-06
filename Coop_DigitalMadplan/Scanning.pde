@@ -1,5 +1,4 @@
-void reader()
-{
+void reader(){
   while (x < 1) {
   img = loadImage("MadPlan.png");
   for (int y = 0; y <  readers.length; y = y+1) {

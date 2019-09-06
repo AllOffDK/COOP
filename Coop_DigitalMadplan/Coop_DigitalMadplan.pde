@@ -22,7 +22,8 @@ int rectSize1 = 1280/3-6;
 int rectSize2 =  123;
 
 color rectColor, rectHighlight;
-color[] colors = {color(255, 255, 0), color(255, 0, 255), color(0, 255, 255), color(255, 0, 0), color(0, 255, 0), color(0, 0, 255), color(255, 255, 255)};
+color[] colors = {color(255, 255, 0), color(255, 0, 255), color(0, 255, 255), 
+color(255, 0, 0), color(0, 255, 0), color(0, 0, 255), color(255, 255, 255)};
 
 PImage img;
 int x = 0;
@@ -31,8 +32,7 @@ Reader[] readers = new Reader[days];
 String[] opskrifter = new String[days];
 String[] dage = new String[days];
 
-void setup()
-{
+void setup(){
   String[] cameras = Capture.list();
 
   if (cameras.length == 0) {
@@ -83,16 +83,14 @@ void setup()
   dage[4] = "Fredag";
 }
 
-void draw()
-{
+void draw(){
   update(mouseX, mouseY);
   if (camOn == true) takePictureMenu();
   else reader();
 }
 
 //controls the highlight of the button in th bottom
-void update(int x, int y)
-{
+void update(int x, int y){
   if ( overRect(rect1X, rect1Y, rectSize1, rectSize2) ) {
     rectOver1 = true;
   } else {
