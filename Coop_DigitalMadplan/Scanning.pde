@@ -2,7 +2,7 @@ void reader(){
   while (x < 1) {
   img = loadImage("MadPlan.png");
   for (int y = 0; y <  readers.length; y = y+1) {
-      readers[y] = new Reader(245, 54+(130*y), 120, 120, img, colors[y]);
+      readers[y] = new Reader(25+(180*y), 55, 180, 180, img, colors[y]);
       opskrifter[y] = "";
     }
     println("gogogo");

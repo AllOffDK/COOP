@@ -4,10 +4,11 @@ void takePictureMenu(){
   if (cam.available() == true && camOn == true) {
     cam.read();
   }
+
   image(cam, 10, 10, cam.width/2, cam.height/2);
   
   //Button in the bottom
-  pushStyle();
+
   noStroke();
   if (rectOver2) {
     fill(rectHighlight);
@@ -20,6 +21,17 @@ void takePictureMenu(){
   textAlign(CENTER);
   textSize(48);
   text("Take Picture", width/2, height-70);
+  
+    for (int y = 0; y <  readers.length; y = y+1) {
+      pushStyle();
+      
+      stroke(255,54,25);
+      strokeWeight(4);
+      fill(0,0,0,0);
+      rect(25+(180*y), 55, 180, 180);
+      
+      popStyle();
+    }
 }
 
 void takePicture(){
