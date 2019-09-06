@@ -29,14 +29,19 @@ If it is not, check the network connection is the same else if the livefeed is d
 ## The prototype
 
 Screen shot of the prototype:
+
 ![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-1.PNG)
 Prototype is waiting for the camera feed
+
 ![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-2.PNG)
 Camerafeed has started
+
 ![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-3.PNG)
 Picture is taken and scanners appear
+
 ![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-4.PNG)
 Scanners has been dragged over the codes
+
 ![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-5.PNG)
 Scan has been pressed and the response is posted on the right
 
