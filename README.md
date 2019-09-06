@@ -1,7 +1,7 @@
 # COOP
 
 
-Setup
+## Setup
 
 1. Download the prototype program (Madplan-prototype)
 
@@ -25,3 +25,6 @@ Setup
 9. Livefeed from the device should be displayed in the prototype program
 
 If it is not, check the network connection is the same else if the livefeed is displayed - Prototype is ready to go
+
+## The prototype
+
