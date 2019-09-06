@@ -10,6 +10,8 @@ Download the EpocCam Driver for mac or pc [Kinoni EpocCam](https://www.kinoni.co
 Download the EpocCam HD app from the [playstore](https://play.google.com/store/apps/details?id=com.kinoni.webcampro) or [appstore](https://apps.apple.com/cz/app/epoccam-hd-webcam-for-mac-pc/id435355256)
 
 
+
+
 Install the EpocCam drivers
 
 Install the EpocCam HD app on your device
