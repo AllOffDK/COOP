@@ -5,8 +5,8 @@ ZXING4P zxing4p;
 // Java array tool
 import java.util.Arrays;
 
+//Libary to control video stream
 import processing.video.*;
-
 Capture cam;
 
 boolean  rectOver1, rectOver2, rectOver3;
@@ -47,46 +47,45 @@ void setup()
 
     // The camera can be initialized directly using an 
     // element from the array returned by list():
-    cam = new Capture(this, cameras[23]);
+        for (int i = 0; i < cameras.length; i++) {
+      print(i + " ");
+      println(cameras[i]);
+      
+      if( cameras[i].equals("name=EpocCam,size=1920x1080,fps=30") == true)
+      {
+        cam = new Capture(this, cameras[i]);
+        println("this cam");
+      }
+    }
     cam.start();
   }      
-
-
-  size(1280, 860);
+  //Size of the window
+  size(1280, 720);
 
   //The libary decoding the QR codes
   zxing4p = new ZXING4P();
   zxing4p.version();
 
   //the clickable button in the bottom of the app
-  rectColor = color(194, 0, 0);
-  rectHighlight = color(51);
-  rect1X =  10;
-  rect1Y = height-126;
-  rect2X =  10+rectSize1;
-  rect2Y = height-126;
-  rect3X = 10+(rectSize1*2);
-  rect3Y = height-126;
-
+  rectColor = color(200, 222, 226);
+  rectHighlight = color(227,238,240);
+  rect1X =  50;
+  rect1Y = height-146;
+  rect2X =  rectSize1;
+  rect2Y = height-146;
+  rect3X = (rectSize1*2);
+  rect3Y = height-146;
 
   dage[0] = "Mandag";
   dage[1] = "Tirsdag";
   dage[2] = "Onsdag";
   dage[3] = "Torsdag";
   dage[4] = "Fredag";
-  //dage[5] = "Lørdag";
-  //dage[6] = "Søndag";
-
-
-  //makes sure the app starts on the menu screen
 }
 
 void draw()
 {
-
-
   update(mouseX, mouseY);
-
   if (camOn == true) takePictureMenu();
   else reader();
 }
@@ -122,6 +121,7 @@ String[] listFileNames(String dir) {
     return null;
   }
 }
+
 //checks if the cursor is over the button in the bottom
 boolean overRect(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width && 

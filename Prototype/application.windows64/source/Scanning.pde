@@ -1,6 +1,5 @@
 void reader()
 {
-  
   while (x < 1) {
   img = loadImage("MadPlan.png");
   for (int y = 0; y <  readers.length; y = y+1) {
@@ -11,7 +10,7 @@ void reader()
   x= 10;
 } 
   //black background
-  background(0);
+  background(246,251,249);
 
   //Picture of madplan
   pushStyle();
@@ -22,8 +21,7 @@ void reader()
 
   //Button in the bottom
   pushStyle();
-  strokeWeight(6);
-  stroke(0, 0, 0, 255);
+  noStroke();
   if (rectOver2) {
     fill(rectHighlight);
   } else {
@@ -31,13 +29,13 @@ void reader()
   }
   rect(rect2X, rect2Y, rectSize1, rectSize2);
 
-  fill(255, 255, 255);
+  fill(57, 72, 74);
   textAlign(CENTER);
   textSize(48);
-  text("Scan", width/2, height-50);
+  text("Scan", width/2, height-70);
   textSize(20);
   textAlign(LEFT);
-  text("Press space to take new picture", 10, height-50);
+  text("Press space to take new picture", 10, height-70);
 
   //Upper left text
   textSize(24);

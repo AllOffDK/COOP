@@ -1,4 +1,4 @@
-//Functions contolling the different imputs
+//Functions controlling the different imputs
 
 void mouseDragged() {
   cursor(HAND);
@@ -31,7 +31,7 @@ void mouseReleased() {
       readers[i].read(img);
     }
   }
-} // mouseReleased()
+}
 
 void keyPressed() {
  if (key == ' ') {

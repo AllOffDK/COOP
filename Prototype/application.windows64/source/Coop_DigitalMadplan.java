@@ -16,7 +16,7 @@ import java.io.InputStream;
 import java.io.OutputStream; 
 import java.io.IOException; 
 
-public class CoopQrCodeMoveAble extends PApplet {
+public class Coop_DigitalMadplan extends PApplet {
 
 //The libary doing the QR decoding
 
@@ -25,7 +25,7 @@ ZXING4P zxing4p;
 // Java array tool
 
 
-
+//Libary to control video stream
 
 Capture cam;
 
@@ -67,11 +67,19 @@ public void setup()
 
     // The camera can be initialized directly using an 
     // element from the array returned by list():
-    cam = new Capture(this, cameras[23]);
+        for (int i = 0; i < cameras.length; i++) {
+      print(i + " ");
+      println(cameras[i]);
+      
+      if( cameras[i].equals("name=EpocCam,size=1920x1080,fps=30") == true)
+      {
+        cam = new Capture(this, cameras[i]);
+        println("this cam");
+      }
+    }
     cam.start();
   }      
-
-
+  //Size of the window
   
 
   //The libary decoding the QR codes
@@ -79,34 +87,25 @@ public void setup()
   zxing4p.version();
 
   //the clickable button in the bottom of the app
-  rectColor = color(194, 0, 0);
-  rectHighlight = color(51);
-  rect1X =  10;
-  rect1Y = height-126;
-  rect2X =  10+rectSize1;
-  rect2Y = height-126;
-  rect3X = 10+(rectSize1*2);
-  rect3Y = height-126;
-
+  rectColor = color(200, 222, 226);
+  rectHighlight = color(227,238,240);
+  rect1X =  50;
+  rect1Y = height-146;
+  rect2X =  rectSize1;
+  rect2Y = height-146;
+  rect3X = (rectSize1*2);
+  rect3Y = height-146;
 
   dage[0] = "Mandag";
   dage[1] = "Tirsdag";
   dage[2] = "Onsdag";
   dage[3] = "Torsdag";
   dage[4] = "Fredag";
-  //dage[5] = "Lørdag";
-  //dage[6] = "Søndag";
-
-
-  //makes sure the app starts on the menu screen
 }
 
 public void draw()
 {
-
-
   update(mouseX, mouseY);
-
   if (camOn == true) takePictureMenu();
   else reader();
 }
@@ -142,6 +141,7 @@ public String[] listFileNames(String dir) {
     return null;
   }
 }
+
 //checks if the cursor is over the button in the bottom
 public boolean overRect(int x, int y, int width, int height) {
   if (mouseX >= x && mouseX <= x+width && 
@@ -151,7 +151,7 @@ public boolean overRect(int x, int y, int width, int height) {
     return false;
   }
 }
-//Functions contolling the different imputs
+//Functions controlling the different imputs
 
 public void mouseDragged() {
   cursor(HAND);
@@ -184,7 +184,7 @@ public void mouseReleased() {
       readers[i].read(img);
     }
   }
-} // mouseReleased()
+}
 
 public void keyPressed() {
  if (key == ' ') {
@@ -195,7 +195,7 @@ public void keyPressed() {
 public void takePictureMenu()
 {
   camOn = true;
-  background(0);
+  background(246,251,249);
   if (cam.available() == true && camOn == true) {
     cam.read();
   }
@@ -203,20 +203,18 @@ public void takePictureMenu()
   
   //Button in the bottom
   pushStyle();
-  strokeWeight(6);
-  stroke(0, 0, 0, 255);
-
+  noStroke();
   if (rectOver2) {
     fill(rectHighlight);
   } else {
     fill(rectColor);
   }
   rect(rect2X, rect2Y, rectSize1, rectSize2);
-
-  fill(255, 255, 255);
+  
+  fill(57, 72, 74);
   textAlign(CENTER);
   textSize(48);
-  text("Take Picture", width/2, height-50);
+  text("Take Picture", width/2, height-70);
 }
 
 public void takePicture()
@@ -275,13 +273,11 @@ class Reader
   {
     tint(255, 180);
     image(qrReadArea, x+10, y+10, w, h);
-    
     tint(255, 255);
     stroke(c);
     strokeWeight(4);
     fill(0, 0, 0, 0);
     rect(x+10, y+10, w, h);
-
   }
   
  public int getPosX()
@@ -300,7 +296,6 @@ class Reader
 }
 public void reader()
 {
-  
   while (x < 1) {
   img = loadImage("MadPlan.png");
   for (int y = 0; y <  readers.length; y = y+1) {
@@ -311,7 +306,7 @@ public void reader()
   x= 10;
 } 
   //black background
-  background(0);
+  background(246,251,249);
 
   //Picture of madplan
   pushStyle();
@@ -322,8 +317,7 @@ public void reader()
 
   //Button in the bottom
   pushStyle();
-  strokeWeight(6);
-  stroke(0, 0, 0, 255);
+  noStroke();
   if (rectOver2) {
     fill(rectHighlight);
   } else {
@@ -331,13 +325,13 @@ public void reader()
   }
   rect(rect2X, rect2Y, rectSize1, rectSize2);
 
-  fill(255, 255, 255);
+  fill(57, 72, 74);
   textAlign(CENTER);
   textSize(48);
-  text("Scan", width/2, height-50);
+  text("Scan", width/2, height-70);
   textSize(20);
   textAlign(LEFT);
-  text("Press space to take new picture", 10, height-50);
+  text("Press space to take new picture", 10, height-70);
 
   //Upper left text
   textSize(24);
@@ -368,9 +362,9 @@ public void reader()
     text(i+1, readers[i].getPosX(), readers[i].getPosY());
   }
 }
-  public void settings() {  size(1280, 860); }
+  public void settings() {  size(1280, 720); }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "CoopQrCodeMoveAble" };
+    String[] appletArgs = new String[] { "Coop_DigitalMadplan" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

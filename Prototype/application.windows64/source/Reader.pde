@@ -50,13 +50,11 @@ class Reader
   {
     tint(255, 180);
     image(qrReadArea, x+10, y+10, w, h);
-    
     tint(255, 255);
     stroke(c);
     strokeWeight(4);
     fill(0, 0, 0, 0);
     rect(x+10, y+10, w, h);
-
   }
   
  int getPosX()
