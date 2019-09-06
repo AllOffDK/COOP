@@ -3,29 +3,29 @@
 
 Setup
 
-Download the prototype program (Madplan-prototype)
+1. Download the prototype program (Madplan-prototype)
 
-Download the EpocCam Driver for mac or pc [Kinoni EpocCam](https://www.kinoni.com/)
+2. Download the EpocCam Driver for mac or pc [Kinoni EpocCam](https://www.kinoni.com/)
 
-Download the EpocCam HD app from the [playstore](https://play.google.com/store/apps/details?id=com.kinoni.webcampro) or [appstore](https://apps.apple.com/cz/app/epoccam-hd-webcam-for-mac-pc/id435355256)
-
-
+3. Download the EpocCam HD app from the [playstore](https://play.google.com/store/apps/details?id=com.kinoni.webcampro) or [appstore](https://apps.apple.com/cz/app/epoccam-hd-webcam-for-mac-pc/id435355256)
 
 
-Install the EpocCam drivers
 
-Install the EpocCam HD app on your device
 
-Make sure your computer and device is on the same network
+4. Install the EpocCam drivers
 
-Start the Epoccam HD app
+5. Install the EpocCam HD app on your device
 
-Start the prototype program (this could take a minute)
+6. Make sure your computer and device is on the same network
 
-Livefeed from the device should be displayed in the prototype program
+7. Start the Epoccam HD app
 
-If it is not, check the network connection is the same
+8. Start the prototype program (this could take a minute)
 
-If the livefeed is displayed
+9. Livefeed from the device should be displayed in the prototype program
 
-Prototype is ready to go
+10. If it is not, check the network connection is the same
+
+11. If the livefeed is displayed
+
+12. Prototype is ready to go
