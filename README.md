@@ -3,7 +3,7 @@
 
 ## Setup
 
-1. Download the prototype program (Madplan-prototype)
+1. Download the prototype program (Madplan-prototype) [github](https://github.com/AllOffDK/COOP/tree/master/Prototype)
 
 2. Download the EpocCam Driver for mac or pc [Kinoni EpocCam](http://www.kinoni.com/)
 
