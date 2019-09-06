@@ -29,6 +29,10 @@ If it is not, check the network connection is the same else if the livefeed is d
 ## The prototype
 
 
-![Image of Yaktocat](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-1.PNG)
+![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-1.PNG)
+![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-2.PNG)
+![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-3.PNG)
+![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-4.PNG)
+![Image of Prototype](https://github.com/AllOffDK/COOP/blob/master/img/Coop-prototype-5.PNG)
 
 
