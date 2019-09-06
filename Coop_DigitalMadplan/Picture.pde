@@ -25,7 +25,7 @@ void takePictureMenu(){
     for (int y = 0; y <  readers.length; y = y+1) {
       pushStyle();
       
-      stroke(255,54,25);
+      stroke(colors[y]);
       strokeWeight(4);
       fill(0,0,0,0);
       rect(25+(180*y), 55, 180, 180);

@@ -1,6 +1,5 @@
 
-class Reader
-{
+class Reader{
   int x;
   int y;
   int w;
@@ -12,8 +11,7 @@ class Reader
   boolean isThere = false;
 
 
-  Reader(int x, int y, int w, int h, PImage img2, color c)
-  {
+  Reader(int x, int y, int w, int h, PImage img2, color c){
     this.x = x;
     this.y = y;
     this.w = w;
@@ -24,8 +22,7 @@ class Reader
   }
 
   //function reading the image - it gets a part of the image and passes it to the libary decoding the images
-  void read(PImage img)
-  {
+  void read(PImage img){
     println("reading");
     qrReadArea = img.get(x*2, y*2, w*2, h*2); 
     decodedText = "";
@@ -46,8 +43,7 @@ class Reader
 
 
 
-  void draw()
-  {
+  void draw(){
     tint(255, 180);
     image(qrReadArea, x+10, y+10, w, h);
     tint(255, 255);
@@ -57,13 +53,11 @@ class Reader
     rect(x+10, y+10, w, h);
   }
   
- int getPosX()
- {
+ int getPosX(){
    return x;
  }
  
- int getPosY()
- {
+ int getPosY(){
    return y;
  }
 

@@ -42,7 +42,8 @@ int rectSize1 = 1280/3-6;
 int rectSize2 =  123;
 
 int rectColor, rectHighlight;
-int[] colors = {color(255, 255, 0), color(255, 0, 255), color(0, 255, 255), color(255, 0, 0), color(0, 255, 0), color(0, 0, 255), color(255, 255, 255)};
+int[] colors = {color(255, 255, 0), color(255, 0, 255), color(0, 255, 255), 
+color(255, 0, 0), color(0, 255, 0), color(0, 0, 255), color(255, 255, 255)};
 
 PImage img;
 int x = 0;
@@ -51,8 +52,7 @@ Reader[] readers = new Reader[days];
 String[] opskrifter = new String[days];
 String[] dage = new String[days];
 
-public void setup()
-{
+public void setup(){
   String[] cameras = Capture.list();
 
   if (cameras.length == 0) {
@@ -103,16 +103,14 @@ public void setup()
   dage[4] = "Fredag";
 }
 
-public void draw()
-{
+public void draw(){
   update(mouseX, mouseY);
   if (camOn == true) takePictureMenu();
   else reader();
 }
 
 //controls the highlight of the button in th bottom
-public void update(int x, int y)
-{
+public void update(int x, int y){
   if ( overRect(rect1X, rect1Y, rectSize1, rectSize2) ) {
     rectOver1 = true;
   } else {
@@ -192,17 +190,17 @@ public void keyPressed() {
     camOn = true;
  }
 }
-public void takePictureMenu()
-{
+public void takePictureMenu(){
   camOn = true;
   background(246,251,249);
   if (cam.available() == true && camOn == true) {
     cam.read();
   }
+
   image(cam, 10, 10, cam.width/2, cam.height/2);
   
   //Button in the bottom
-  pushStyle();
+
   noStroke();
   if (rectOver2) {
     fill(rectHighlight);
@@ -215,15 +213,24 @@ public void takePictureMenu()
   textAlign(CENTER);
   textSize(48);
   text("Take Picture", width/2, height-70);
+  
+    for (int y = 0; y <  readers.length; y = y+1) {
+      pushStyle();
+      
+      stroke(colors[y]);
+      strokeWeight(4);
+      fill(0,0,0,0);
+      rect(25+(180*y), 55, 180, 180);
+      
+      popStyle();
+    }
 }
 
-public void takePicture()
-{
+public void takePicture(){
   cam.save("data/MadPlan.png");
 }
 
-class Reader
-{
+class Reader{
   int x;
   int y;
   int w;
@@ -235,8 +242,7 @@ class Reader
   boolean isThere = false;
 
 
-  Reader(int x, int y, int w, int h, PImage img2, int c)
-  {
+  Reader(int x, int y, int w, int h, PImage img2, int c){
     this.x = x;
     this.y = y;
     this.w = w;
@@ -247,8 +253,7 @@ class Reader
   }
 
   //function reading the image - it gets a part of the image and passes it to the libary decoding the images
-  public void read(PImage img)
-  {
+  public void read(PImage img){
     println("reading");
     qrReadArea = img.get(x*2, y*2, w*2, h*2); 
     decodedText = "";
@@ -269,8 +274,7 @@ class Reader
 
 
 
-  public void draw()
-  {
+  public void draw(){
     tint(255, 180);
     image(qrReadArea, x+10, y+10, w, h);
     tint(255, 255);
@@ -280,13 +284,11 @@ class Reader
     rect(x+10, y+10, w, h);
   }
   
- public int getPosX()
- {
+ public int getPosX(){
    return x;
  }
  
- public int getPosY()
- {
+ public int getPosY(){
    return y;
  }
 
@@ -294,12 +296,11 @@ class Reader
     return (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h);
   } // mouseOver()
 }
-public void reader()
-{
+public void reader(){
   while (x < 1) {
   img = loadImage("MadPlan.png");
   for (int y = 0; y <  readers.length; y = y+1) {
-      readers[y] = new Reader(245, 54+(130*y), 120, 120, img, colors[y]);
+      readers[y] = new Reader(25+(180*y), 55, 180, 180, img, colors[y]);
       opskrifter[y] = "";
     }
     println("gogogo");
