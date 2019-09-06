@@ -24,6 +24,4 @@ Setup
 
 9. Livefeed from the device should be displayed in the prototype program
 
-If it is not, check the network connection is the same
-
-If the livefeed is displayed - Prototype is ready to go
+If it is not, check the network connection is the same else if the livefeed is displayed - Prototype is ready to go
