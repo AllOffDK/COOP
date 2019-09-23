@@ -12,11 +12,8 @@ Capture cam;
 boolean  rectOver1, rectOver2, rectOver3;
 boolean camOn = true;
 
-// NumberOfItemsInArray is the array with pictures of the madplan
 // days is the number of days in the madplan
-int NumberOfItemsInArray = 3;
 int days = 5;
-int currentImg = 0;
 int rect1X, rect1Y, rect2X, rect2Y, rect3X, rect3Y;
 int rectSize1 = 1280/3-6;
 int rectSize2 =  123;

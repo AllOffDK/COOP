@@ -1,14 +1,14 @@
-void takePictureMenu(){
+void takePictureMenu()
+{
   camOn = true;
   background(246,251,249);
   if (cam.available() == true && camOn == true) {
     cam.read();
   }
-
   image(cam, 10, 10, cam.width/2, cam.height/2);
   
   //Button in the bottom
-
+  pushStyle();
   noStroke();
   if (rectOver2) {
     fill(rectHighlight);
@@ -21,19 +21,14 @@ void takePictureMenu(){
   textAlign(CENTER);
   textSize(48);
   text("Take Picture", width/2, height-70);
-  
+  if(guideOn){
     for (int y = 0; y <  readers.length; y = y+1) {
-      pushStyle();
-      
-      stroke(colors[y]);
-      strokeWeight(4);
-      fill(0,0,0,0);
-      rect(25+(180*y), 55, 180, 180);
-      
-      popStyle();
+      rect(15+(190*y), 335, 180, 180);
     }
+  }
 }
 
-void takePicture(){
+void takePicture()
+{
   cam.save("data/MadPlan.png");
 }

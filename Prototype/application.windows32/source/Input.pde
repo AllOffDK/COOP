@@ -38,4 +38,12 @@ void keyPressed() {
     x = 0;
     camOn = true;
  }
+  if (key == 'x' && guideOn == true) {
+    guideOn = false;
+ }
+ else if (key == 'x' && guideOn == false) {
+    guideOn = true;
+ }
+
+ 
 }

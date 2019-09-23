@@ -1,8 +1,9 @@
-void reader(){
+void reader()
+{
   while (x < 1) {
   img = loadImage("MadPlan.png");
   for (int y = 0; y <  readers.length; y = y+1) {
-      readers[y] = new Reader(25+(180*y), 55, 180, 180, img, colors[y]);
+      readers[y] = new Reader(15+(190*y), 335, 180, 180, img, colors[y]);
       opskrifter[y] = "";
     }
     println("gogogo");
@@ -64,4 +65,5 @@ void reader(){
     fill(colors[i]);
     text(i+1, readers[i].getPosX(), readers[i].getPosY());
   }
+  
 }
